@@ -8,6 +8,7 @@ class Navbar extends Component {
         state = {
            categories: []
         }
+
     
    async componentDidMount(){
       const response = await fetch('http://localhost:8081/api/categories');
@@ -20,18 +21,21 @@ class Navbar extends Component {
         return (
             <nav >
                <div className='nav-center'>
-    <div className='nav-header'>
+                <div className='nav-header'>
                    
                     <button className='nav-toggle'>
                        <FaBars/>
                     </button>
                   </div>
+                  
 
                   <div className='links-container'>
                       
                   <ul className='links'>
                     {categories.map((categori)=>{
-                    const { id , category,imageUrl}= categori; 
+                    const { id , category, 
+                      
+                      imageUrl}= categori; 
                     return (
                         <li key={id}>
                            <a href='#'>
@@ -41,8 +45,18 @@ class Navbar extends Component {
                     )
                     })}
                   </ul>
-
+</div>
                     <ul className='social-icons'>
+                      <li>
+                          <a href='https://www.twitter.com'>
+                             <FaTwitter/>
+                          </a>
+                      </li>
+                      <li>
+                          <a href='https://www.twitter.com'>
+                             <FaTwitter/>
+                          </a>
+                      </li>
                       <li>
                           <a href='https://www.twitter.com'>
                              <FaTwitter/>
@@ -50,7 +64,7 @@ class Navbar extends Component {
                       </li>
                     </ul>
 
-                  </div>
+                  
 
               </div>
 
