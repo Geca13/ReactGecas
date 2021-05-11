@@ -2,23 +2,30 @@ import React from 'react'
 import { FaBehance, FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa'
 export const links = [
   {
+
     id: 1,
     url: '/',
-    text: 'menu',
+    text: 'home',
+
   },
   {
     id: 2,
+    url: '/menu',
+    text: 'menu',
+  },
+  {
+    id: 3,
     url: '/about',
     text: 'reservation',
   },
   {
-    id: 3,
-    url: '/projects',
+    id: 4,
+    url: '/locations',
     text: 'locations',
   },
   {
-    id: 4,
-    url: '/contact',
+    id: 5,
+    url: '/delivery',
     text: 'delivery',
   },
   
@@ -27,7 +34,7 @@ export const links = [
 export const social = [
   {
     id: 1,
-    url: 'https://www.twitter.com',
+    url: 'https://www.facebook.com',
     icon: <FaFacebook />,
   },
   {
@@ -37,12 +44,8 @@ export const social = [
   },
   {
     id: 3,
-    url: 'https://www.twitter.com',
+    url: 'https://www.linkedin.com',
     icon: <FaLinkedin />,
   },
-  {
-    id: 4,
-    url: 'https://www.twitter.com',
-    icon: <FaBehance />,
-  },
+  
 ]
