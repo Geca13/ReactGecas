@@ -1,26 +1,28 @@
 import React, { Component } from 'react'
-import {useParams} from 'react-router-dom'
+import Item from '../Item'
 
 
 class Category extends Component {
-    
-
-        state = {
+       
+       state = {
            categories: []
+           
         }
-
-        async componentDidMount(){
-            const {id} = useParams();
-      const response = await fetch(`'http://localhost:8081/api/subCategories'+${id}`);
+        
+      async componentDidMount(){
+        if (this.props.match && this.props.match.params.id) {
+          
+      const id = this.props.match.params.id
+     const iid = parseInt(id);
+      
+    const response = await fetch(`'http://localhost:8081/api/subCategories/'${iid}`)
     const body = await response.json();
     this.setState({ categories: body});
     }
+  }
     render() {
       const categories = this.state.categories
-        if(categories.length < 1) {
-    return (
-    <h2 className='section-title'></h2>
-  )}
+        
   return (
     <section className='section'>
 
@@ -33,6 +35,6 @@ class Category extends Component {
     </section>
   )
     }
-        
+  
     }
     export default Category

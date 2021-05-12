@@ -8,6 +8,7 @@ import Delivery from './pages/Delivery'
 import Menu from './pages/Menu'
 import Reservations from './pages/Reservation'
 import Category from './pages/Category'
+import Item from './Item'
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
        <Route path='/delivery'>
          <Delivery/>
        </Route>
-       <Route path='/category:id'>
+       <Route path='/category/:id'>
          <Category/>
        </Route>
      </Switch>
