@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useRef } from 'react'
 import {FaBars, FaTwitter } from 'react-icons/fa'
 import CategoryService from './service/CategoryService'
 import logo from './logo.svg'
@@ -7,7 +7,17 @@ import { links ,social} from './data'
 const Navbar =() => {
 
    const [showLinks, setShowLinks] = useState(false);
-    
+   const linksContainerRef = useRef(null);
+   const linksRef = useRef(null);
+
+   useEffect(()=>{
+    const linksHeight = linksRef.current.getBoundingClientRect().height
+    if(showLinks) {
+       linksContainerRef.current.style.height = `${linksHeight}px`
+    } else {
+       linksContainerRef.current.style.height = '0px'
+    }
+   },[showLinks])
         return (
             <nav >
                <div className='nav-center'>
@@ -19,9 +29,9 @@ const Navbar =() => {
                   </div>
                   
                   
-                  <div className={`${showLinks}`}'links-container show-container'>
+                  <div className='links-container' ref={linksContainerRef}>
                       
-                   <ul className='links'>
+                   <ul className='links' ref={linksRef}>
                     {links.map((link)=>{
                     const { id , url, text}= link; 
                     return (

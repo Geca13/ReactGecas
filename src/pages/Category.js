@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import Item from '../Item'
+import {useParams} from 'react-router-dom'
 
-class Menu extends Component {
+
+class Category extends Component {
     
 
         state = {
@@ -9,7 +10,8 @@ class Menu extends Component {
         }
 
         async componentDidMount(){
-      const response = await fetch('http://localhost:8081/api/categories');
+            const {id} = useParams();
+      const response = await fetch(`'http://localhost:8081/api/subCategories'+${id}`);
     const body = await response.json();
     this.setState({ categories: body});
     }
@@ -33,4 +35,4 @@ class Menu extends Component {
     }
         
     }
-    export default Menu
+    export default Category

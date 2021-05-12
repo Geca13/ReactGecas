@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaBehance, FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import {  FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa'
 export const links = [
   {
 
@@ -15,7 +15,7 @@ export const links = [
   },
   {
     id: 3,
-    url: '/about',
+    url: '/reservation',
     text: 'reservation',
   },
   {

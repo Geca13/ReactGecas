@@ -15,7 +15,7 @@ class Locations extends Component {
     render() {
       const categories = this.state.locations
         return (
-            <H1>Locations  goes here</H1>
+            <h1>Locations  goes here</h1>
         );
     }
         
