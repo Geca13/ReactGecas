@@ -30,7 +30,7 @@ function App() {
        <Route path='/delivery'>
          <Delivery/>
        </Route>
-       <Route path='/category/:id'>
+       <Route path='/category/:id' render={(props) => <Category {...props} />}>
          <Category/>
        </Route>
      </Switch>

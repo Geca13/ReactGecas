@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Restaurant from '../Restaurant'
 
 class Locations extends Component {
     
@@ -13,9 +14,19 @@ class Locations extends Component {
     this.setState({ locations: body});
     }
     render() {
-      const categories = this.state.locations
+      const locations = this.state.locations
         return (
-            <h1>Locations  goes here</h1>
+             <section className='section'>
+
+      <h2 className='section-title'>Locations</h2>
+       <div className='row1'>
+      <div className='column1'>
+       {locations.map((category)=>{
+         return <Restaurant key={category.id}{...category}/>
+       })}
+      </div>
+      </div>
+    </section>
         );
     }
         
