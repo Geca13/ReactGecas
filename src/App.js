@@ -8,7 +8,8 @@ import Delivery from './pages/Delivery'
 import Menu from './pages/Menu'
 import Reservations from './pages/Reservation'
 import Category from './pages/Category'
-import Item from './Item'
+import RestourantDetails from './pages/RestourantDetails'
+import MenuItems from './pages/MenuItems'
 
 function App() {
   return (
@@ -30,8 +31,14 @@ function App() {
        <Route path='/delivery'>
          <Delivery/>
        </Route>
-       <Route path='/category/:id' render={(props) => <Category {...props} />}>
+       <Route path='/category/:id'>
          <Category/>
+       </Route>
+       <Route path='/restourant/:id'>
+         <RestourantDetails/>
+       </Route>
+       <Route path='/items/:id'>
+         <MenuItems/>
        </Route>
      </Switch>
     </Router>

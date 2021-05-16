@@ -1,21 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './index.css'
 
-const Restaurant = ({imageUrl,street,number,phone,city,zipCode,id}) => {
+const SubItem = ({imageUrl,description,id}) => {
   return (
-   <article className='cocktail'>
+    <article className='cocktail'>
       <div className='img-container'>
         <img src={imageUrl}  alt='logo' />
       </div>
       <div className='cocktail-footer'>
-     <h3>{city}</h3>
+     <h3>{description}</h3>
      
-     <Link to= {`/restourant/${id}`} className='btn btn-primary btn-details'>
-      Details
+     <Link to= {`/items/${id}`} className='btn btn-primary btn-details'>
+       See All
      </Link>
       </div>
     </article>
   )
 }
 
-export default Restaurant
+export default SubItem

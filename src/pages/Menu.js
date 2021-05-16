@@ -17,7 +17,7 @@ class Menu extends Component {
       const categories = this.state.categories
         if(categories.length < 1) {
     return (
-    <h2 className='section-title'></h2>
+    <h2 className='section-title'>Ups the manu is empty...</h2>
   )}
   return (
     <section className='section'>

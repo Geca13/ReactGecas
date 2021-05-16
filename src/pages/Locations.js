@@ -16,11 +16,11 @@ class Locations extends Component {
     render() {
       const locations = this.state.locations
         return (
-             <section className='section'>
+             <section className='section' >
 
       <h2 className='section-title'>Locations</h2>
-       <div className='row1'>
-      <div className='column1'>
+       <div className='section-title'>
+      <div className='cocktails-center'>
        {locations.map((category)=>{
          return <Restaurant key={category.id}{...category}/>
        })}

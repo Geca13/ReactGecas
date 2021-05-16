@@ -1,32 +1,35 @@
 import React, { Component } from 'react'
-import Item from '../Item'
+import { useParams, Link } from 'react-router-dom'
+import SubItem from '../SubItem'
+
+const url = 'http://localhost:8081/api/subCategories/'
 
 
-class Category extends Component {
 
+const Category = () => {
+  const {id} = useParams();
   
-       
-       state = {
-           categories: []
-           
-        }
-        
-      async componentDidMount(){
-        
-        const code = (new URLSearchParams(window.location.search))
-        const id = code.get('id')
-        const iid = parseInt(id)
-
-      
-    const response = await fetch(`'http://localhost:8081/api/subCategories/'${iid}`)
-    const body = await response.json();
-    this.setState({ categories: body});
+  const [categories, setCategories] = React.useState(null);
+  React.useEffect (() => {
     
-  }
-    render() {
-      
-        const categories = this.state.categories
-        console.log(categories)
+    async function getCategory() {
+      try {
+        const response = await fetch(`${url}${id}`)
+        const data = await response.json();
+        setCategories(data)
+        
+      } catch (error) {
+        console.log(error)
+        
+      }
+    }
+    getCategory();
+  },[id])
+   
+   if(!categories) {
+     return <h2 className='section-title'>categories doesnt exist</h2>
+   }
+   
   return (
     
     <section className='section'>
@@ -34,12 +37,12 @@ class Category extends Component {
       <h2 className='section-title'>Menu</h2>
       <div className='cocktails-center'>
        {categories.map((category)=>{
-         return <Item key={category.id}{...category}/>
+         return <SubItem key={category.id}{...category}/>
        })}
       </div>
     </section>
   )
     }
   
-    }
+    
     export default Category
