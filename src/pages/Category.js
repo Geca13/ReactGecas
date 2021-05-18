@@ -6,7 +6,7 @@ const url = 'http://localhost:8081/api/subCategories/'
 
 
 
-const Category = () => {
+const MenuCategory = () => {
   const {id} = useParams();
   
   const [categories, setCategories] = React.useState(null);
@@ -45,4 +45,4 @@ const Category = () => {
     }
   
     
-    export default Category
+    export default MenuCategory

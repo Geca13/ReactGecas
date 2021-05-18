@@ -2,7 +2,7 @@ import React, { useEffect, useState,useRef } from 'react'
 import {FaBars, FaTwitter } from 'react-icons/fa'
 import CategoryService from './service/CategoryService'
 import logo from './logo.svg'
-import { links ,social} from './data'
+import { links ,social} from './components/data'
 
 const Navbar =() => {
 

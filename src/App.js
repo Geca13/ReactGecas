@@ -10,6 +10,7 @@ import Reservations from './pages/Reservation'
 import Category from './pages/Category'
 import RestourantDetails from './pages/RestourantDetails'
 import MenuItems from './pages/MenuItems'
+import ItemDetails from './pages/ItemDetails'
 
 function App() {
   return (
@@ -39,6 +40,9 @@ function App() {
        </Route>
        <Route path='/items/:id'>
          <MenuItems/>
+       </Route>
+       <Route path='/item/:id'>
+         <ItemDetails/>
        </Route>
      </Switch>
     </Router>

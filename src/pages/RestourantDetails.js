@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 
 const url = 'http://localhost:8081/api/location/'
@@ -37,19 +37,19 @@ const RestourantDetails = () => {
         <img src={imageUrl} alt='image' />
         <div className='drink-info'>
           <p>
-            <span className='drink-data'>name :</span> {street}
+            <span className='drink-data'>street :</span> {street}, {number}
           </p>
           <p>
-            <span className='drink-data'>category :</span> {city}
+            <span className='drink-data'>city :</span> 
           </p>
           <p>
-            <span className='drink-data'>info :</span> {number}
+            <span className='drink-data'>city :</span>{zipCode}, {city}
           </p>
           <p>
-            <span className='drink-data'>glass :</span> {zipCode}
+            <span className='drink-data'>glass :</span> 
           </p>
           <p>
-            <span className='drink-data'>instructions :</span> {phone}
+            <span className='drink-data'>phone :</span> {phone}
           </p>
           
         </div>

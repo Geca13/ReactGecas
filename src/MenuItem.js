@@ -2,25 +2,23 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 
-const MenuItem = ({imageUrl,description,id, price}) => {
+const MenuItem = ({imageUrl,description,id, price, producer}) => {
   return (
-    <div className='section-center'>
-      
-      <article className='menu-item'>
-      
-        <img src={imageUrl} className='photo'  alt='logo' />
-        <div className='item-info'>
-
-         <header>
-         <h4>{description}</h4>
-         <h4>{price}</h4>
-
-         </header>
-
+   <article className='cocktail'>
+      <div className='img-container'>
+        <img src={imageUrl}  alt='logo' />
       </div>
-      
+      <div className='cocktail-footer'>
+       
+     <h4>{description}</h4>
+     <h4>{price} den</h4>
+
+     
+     <Link to= {`/item/${id}`} className='btn btn-primary btn-details'>
+      Details
+     </Link>
+      </div>
     </article>
-    </div>
   )
 }
 

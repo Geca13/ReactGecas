@@ -11,41 +11,38 @@ const url = 'http://localhost:8081/api/items/'
 const MenuItems = () => {
   const {id} = useParams();
   
-  const [items, setItems] = React.useState(null);
+  const [categories, setCategories] = React.useState(null);
   React.useEffect (() => {
     
-    async function getItems() {
+    async function getCategory() {
       try {
         const response = await fetch(`${url}${id}`)
         const data = await response.json();
-        setItems(data)
+        setCategories(data)
         
       } catch (error) {
         console.log(error)
         
       }
     }
-    getItems();
+    getCategory();
   },[id])
    
-   if(!items) {
+   if(!categories) {
      return <h2 className='section-title'>categories doesnt exist</h2>
    }
    
   return (
-    <main>
-    <section className='menu section'>
-   
-      <div className='title'>
-      <div className='underline'></div>
-      </div>
-      
-       {items.map((category)=>{
+    
+    <section className='section'>
+
+      <h2 className='section-title'>Menu</h2>
+      <div className='cocktails-center'>
+       {categories.map((category)=>{
          return <MenuItem key={category.id}{...category}/>
        })}
-      
+      </div>
     </section>
-    </main>
   )
     }
   
