@@ -12,7 +12,7 @@ const MenuItem = ({imageUrl,description,id, price, producer}) => {
        
      <h4>{description}</h4>
      <h4>{price} den</h4>
-
+      {producer.map(prod => <h5>{prod.producer}</h5>)} 
      
      <Link to= {`/item/${id}`} className='btn btn-primary btn-details'>
       Details
