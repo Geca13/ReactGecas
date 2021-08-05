@@ -26,13 +26,14 @@ const ItemDetails = () => {
    if(!item) {
      return <h2 className='section-title'>Item doesnt exist</h2>
    }
-   const {description,price,imageUrl,available} = item;
+   const {description,price,imageUrl,available, producer: {name}, ingredients} = item;
    if(available === true) {
        let available = 'yes';
    } else {
        let available = 'no';
    }
   return (
+    <>
     <section className='section cocktail-section'>
       <Link to='/' className='btn btn-primary'>
         Back
@@ -53,14 +54,30 @@ const ItemDetails = () => {
           <p>
             <span className='drink-data'>glass :</span> {price}
           </p>
-          <p>
-            <span className='drink-data'>instructions :</span> {price}
-          </p>
+          <p>{name !== null ? name : ''}</p>
+            
+            
+          
+          
           
         </div>
        </div>
     </section>
+    <section>
+    {ingredients.length > 0 && <section className='room-extras'>
+    <h6>extras</h6>
+    <ul className='extras'>
+        {ingredients.map((item,index)=>{
+            return <li key={index}>-{item}</li>
+        })}
+
+    </ul>
+</section>}
+</section>
+</>
+
   )
+    
 }
 
 export default ItemDetails
