@@ -14,6 +14,7 @@ const ItemDetails = () => {
         const response = await fetch(`${url}${id}`)
         const data = await response.json();
         setItem(data)
+        console.log(data)
         
       } catch (error) {
         console.log(error)
@@ -26,7 +27,7 @@ const ItemDetails = () => {
    if(!item) {
      return <h2 className='section-title'>Item doesnt exist</h2>
    }
-   const {description,price,imageUrl,available, producer: {name}, ingredients} = item;
+   const {description,price,imageUrl,available,  igredients } = item;
    if(available === true) {
        let available = 'yes';
    } else {
@@ -54,26 +55,18 @@ const ItemDetails = () => {
           <p>
             <span className='drink-data'>glass :</span> {price}
           </p>
-          <p>{name !== null ? name : ''}</p>
+          <p>
+            <span className='drink-data'>ingredients :</span>
+             {igredients.map((ingredient,id) =>{
+               return ingredient ? <span key={id}>{ingredient}</span> : null
+             })}
+          </p>
+          
             
-            
-          
-          
-          
         </div>
        </div>
     </section>
-    <section>
-    {ingredients.length > 0 && <section className='room-extras'>
-    <h6>extras</h6>
-    <ul className='extras'>
-        {ingredients.map((item,index)=>{
-            return <li key={index}>-{item}</li>
-        })}
-
-    </ul>
-</section>}
-</section>
+   
 </>
 
   )

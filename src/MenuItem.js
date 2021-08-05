@@ -2,7 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 
-const MenuItem = ({imageUrl,description,id, price, producer:{name}}) => {
+const MenuItem = ({imageUrl,description,id, price,  igredients}) => {
+ console.log(igredients)
   return (
    <article className='cocktail'>
       <div className='img-container'>
@@ -12,7 +13,8 @@ const MenuItem = ({imageUrl,description,id, price, producer:{name}}) => {
        
      <h4>{description}</h4>
      <h4>{price} den</h4>
-      {<h5>{name ? name : ''}</h5>} 
+     
+      
      
      <Link to= {`/item/${id}`} className='btn btn-primary btn-details'>
       Details
