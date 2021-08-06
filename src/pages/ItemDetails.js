@@ -27,7 +27,7 @@ const ItemDetails = () => {
    if(!item) {
      return <h2 className='section-title'>Item doesnt exist</h2>
    }
-   const {description,price,imageUrl,available,  igredients } = item;
+   const {description,price,imageUrl,available,  igredients , producer } = item;
    if(available === true) {
        let available = 'yes';
    } else {
@@ -52,15 +52,14 @@ const ItemDetails = () => {
           <p>
             <span className='drink-data'>info :</span> {price}
           </p>
-          <p>
-            <span className='drink-data'>glass :</span> {price}
-          </p>
+          {producer !== null && <p>
+            <span className='drink-data'>producer :</span> {producer.name}
+          </p>}
+          {igredients.length > 0 &&
           <p>
             <span className='drink-data'>ingredients :</span>
-             {igredients.map((ingredient,id) =>{
-               return ingredient ? <span key={id}>{ingredient}</span> : null
-             })}
-          </p>
+             {igredients.map(ingredient=> <li >{ingredient.ingredient}</li>)}
+          </p>}
           
             
         </div>

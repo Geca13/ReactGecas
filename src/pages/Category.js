@@ -33,7 +33,9 @@ const MenuCategory = () => {
   return (
     
     <section className='section'>
-
+       <Link to='/menu' className='btn btn-primary'>
+        Back
+      </Link>
       <h2 className='section-title'>Menu</h2>
       <div className='cocktails-center'>
        {categories.map((category)=>{

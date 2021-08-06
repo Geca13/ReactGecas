@@ -29,7 +29,7 @@ const RestourantDetails = () => {
    const {street,number,city,zipCode,imageUrl,phone} = location;
   return (
     <section className='section cocktail-section'>
-      <Link to='/' className='btn btn-primary'>
+      <Link to='/locations' className='btn btn-primary'>
         Back
       </Link>
        <h2 className='section-title'>{street} </h2>
@@ -40,13 +40,10 @@ const RestourantDetails = () => {
             <span className='drink-data'>street :</span> {street}, {number}
           </p>
           <p>
-            <span className='drink-data'>city :</span> 
+            <span className='drink-data'>city :</span> {city}
           </p>
           <p>
-            <span className='drink-data'>city :</span>{zipCode}, {city}
-          </p>
-          <p>
-            <span className='drink-data'>glass :</span> 
+            <span className='drink-data'>zip code :</span>{zipCode}
           </p>
           <p>
             <span className='drink-data'>phone :</span> {phone}
