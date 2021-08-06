@@ -27,7 +27,7 @@ const ItemDetails = () => {
    if(!item) {
      return <h2 className='section-title'>Item doesnt exist</h2>
    }
-   const {description,price,imageUrl,available,  igredients , producer } = item;
+   const {description,price,imageUrl,available,  igredients , producer, subCategory } = item;
    if(available === true) {
        let available = 'yes';
    } else {
@@ -36,8 +36,8 @@ const ItemDetails = () => {
   return (
     <>
     <section className='section cocktail-section'>
-      <Link to='/' className='btn btn-primary'>
-        Back
+      <Link to={`/items/${subCategory.id}` }className='btn btn-primary'>
+        Back to {subCategory.description}s
       </Link>
        <h2 className='section-title'>{description} </h2>
        <div className='drink'>

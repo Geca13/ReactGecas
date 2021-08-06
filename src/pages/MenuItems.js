@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import MenuItem from '../MenuItem'
-import SubCategory from '../SubCategory'
+import MenuItem from '../components/MenuItem'
+
 
 
 const url = 'http://localhost:8081/api/items/'
@@ -33,15 +33,23 @@ const MenuItems = () => {
    }
    
   return (
+
+    
     
     <section className='section'>
+      
 
       <h2 className='section-title'>Menu</h2>
       <div className='cocktails-center'>
        {categories.map((category)=>{
          return <MenuItem key={category.id}{...category}/>
-       })}
+         
+       } )
+       }
+       
       </div>
+
+      
     </section>
   )
     }

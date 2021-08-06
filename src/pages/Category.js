@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import SubItem from '../SubItem'
+import SubItem from '../components/SubItem'
 
 const url = 'http://localhost:8081/api/subCategories/'
 
