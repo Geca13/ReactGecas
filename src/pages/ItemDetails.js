@@ -1,12 +1,19 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 
+
 const url = 'http://localhost:8081/api/item/'
 
 const ItemDetails = () => {
   const {id} = useParams();
   
   const [item, setItem] = React.useState(null);
+  const [cart, setCart] = React.useState([]);
+
+  const addToCart = (item) => {
+     setCart([...cart, item])
+     console.log(cart)
+  }
   React.useEffect (() => {
     
     async function getItem() {
@@ -14,7 +21,7 @@ const ItemDetails = () => {
         const response = await fetch(`${url}${id}`)
         const data = await response.json();
         setItem(data)
-        console.log(data)
+        
         
       } catch (error) {
         console.log(error)
@@ -36,6 +43,7 @@ const ItemDetails = () => {
   return (
     <>
     <section className='section cocktail-section'>
+      <h3>{cart.length}</h3>
       <Link to={`/items/${subCategory.id}` }className='btn btn-primary'>
         Back to {subCategory.description}s
       </Link>
@@ -61,7 +69,7 @@ const ItemDetails = () => {
              {igredients.map(ingredient=> <li >{ingredient.ingredient}</li>)}
           </p>}
           
-            
+            <button onClick={() => addToCart(item)}>add to cart</button>
         </div>
        </div>
     </section>
