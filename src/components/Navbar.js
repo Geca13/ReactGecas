@@ -1,13 +1,16 @@
 import React, { useEffect, useState,useRef } from 'react'
-import {FaBars, FaTwitter } from 'react-icons/fa'
+import {FaBars, FaTwitter,FaShoppingCart } from 'react-icons/fa'
 import { links ,social} from './data'
 
 const Navbar =() => {
-
+   const [cart, setCart] = React.useState([]);
    const [showLinks, setShowLinks] = useState(false);
    const linksContainerRef = useRef(null);
    const linksRef = useRef(null);
-
+   
+   
+   localStorage.setItem("cart", cart)
+   console.log(cart)
    useEffect(()=>{
     const linksHeight = linksRef.current.getBoundingClientRect().height
     if(showLinks) {
@@ -40,26 +43,13 @@ const Navbar =() => {
                         </li>
                     )
                     })}
-
+                    <FaShoppingCart/>{cart.length}
                    </ul>
+                   
                   </div>
 
                   
-                    <ul className='social-icons'>
-                       {social.map((media) =>{
-                          const {id, url ,icon} = media;
-
-                          return (
-                           <li key={id}>
-                              <a href={url}>
-                               {icon}
-                              </a>
-                           </li>
-                       )
-
-                       })}
-                      
-                    </ul>
+                   
 
                   
 

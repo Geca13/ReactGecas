@@ -11,8 +11,11 @@ import Category from './pages/Category'
 import RestourantDetails from './pages/RestourantDetails'
 import MenuItems from './pages/MenuItems'
 import ItemDetails from './pages/ItemDetails'
+import ShoppingCart from './pages/ShoppingCart'
 
 function App() {
+
+  
   return (
     <Router>
      <Navbar/>
@@ -43,6 +46,9 @@ function App() {
        </Route>
        <Route path='/item/:id'>
          <ItemDetails/>
+       </Route>
+       <Route path='/cart'>
+       <ShoppingCart/>
        </Route>
      </Switch>
     </Router>

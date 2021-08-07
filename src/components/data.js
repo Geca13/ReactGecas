@@ -1,5 +1,5 @@
 import React from 'react'
-import {  FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import {  FaFacebook, FaLinkedin, FaTwitter, FaShoppingCart } from 'react-icons/fa'
 export const links = [
   {
 
@@ -27,6 +27,12 @@ export const links = [
     id: 5,
     url: '/delivery',
     text: 'delivery',
+  },
+
+  {
+    id: 6,
+    url: '/cart',
+    text: 'My Cart ' ,
   },
   
 ]
